@@ -6,7 +6,7 @@ require 'time'
 
 module ExternalPosts
   class ExternalPostsGenerator < Jekyll::Generator
-    safe true
+    safe false
     priority :high
 
     def generate(site)
