@@ -36,9 +36,9 @@
       year: SEP 2023 - Hoy
       description:
         - <p>Desarrollo de código para automatización, despliegue de APIs, implementación de procesos de ETL y web scrapping. Interacción con clientes de otras partes del mundo.</p>
-      # Keywords
+        # Keywords
         - <i>Keywords:</i> <b>- API REST - ETL - Python - GitHub</b>
-    
+
     - title: Asistente de Investigación (Practicas Profesionales)
       institution: Observatorio Tecnológico de Hidalgo, Pachuca de Soto, Hidalgo
       year: Jul - Dic 2023
@@ -54,7 +54,6 @@
         - <p>Creación de actividades como asistencia para los docentes y alumnos, acudí a actividades curriculares y de evaluación.</p>
         # "Keywords"
         - <i>Keywords:</i> <b>- Gestión del tiempo - Trabajo en equipo - Organización</b>
-
 
     # - title: Professor of Theoretical Physics
     #   institution: Karl-Ferdinand University, Prague, Czechoslovakia
