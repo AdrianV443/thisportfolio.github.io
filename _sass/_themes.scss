@@ -24,7 +24,7 @@
     #{green($black-color)},
     #{blue($black-color)},
     0.4
-    );
+  );
 
   --global-back-to-top-text-color: #{$white-color};
   --global-newsletter-bg-color: #{$white-color};
@@ -94,7 +94,7 @@ html[data-theme="dark"] {
     #{green($black-color)},
     #{blue($black-color)},
     0.5
-    );
+  );
   --global-back-to-top-text-color: #{$black-color};
   --global-newsletter-bg-color: #{$grey-color-light};
   --global-newsletter-text-color: #{$grey-color-dark};
