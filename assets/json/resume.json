@@ -1,18 +1,18 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Adrian Vázquez Espinosa",
+    "label": "Científico de Datos",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "adrianvazquez443@gmail.com",
+    "phone": "(+52) 7751425295",
+    "url": "https://adrianv443.github.io/thisportfolio.github.io/",
+    "summary": "Científico de datos autodidacta",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "12 Tlalpan",
+      "postalCode": "06000",
+      "city": "CDMX",
+      "countryCode": "MX",
+      "region": "México"
     },
     "profiles": [
       {
@@ -24,13 +24,13 @@
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
+      "name": "Observatorio Tecnológico de Hidalgo",
+      "position": "Asistente de investigador",
       "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "startDate": "2023-07-20",
+      "endDate": "2023-12-23",
+      "summary": "Creando bases de datos con información extraída de la web a través de la colaboración con la consultora Loop Gestión Empresarial SA. Realicé transformación y limpieza de datos, elaborando informes y asistiendo al equipo de investigadores del observatorio",
+      "highlights": ["Bases de datos", "Limpieza de datos", "Extracción de datos"]
     }
   ],
   "volunteer": [

@@ -1,11 +1,11 @@
 - title: General Information
   type: map
   contents:
-    - name: Full Name
+    - name: Nombre
       value: Adrian Vázquez Espinosa
-    - name: Date of Birth
-      value: 9 de Mayo de 1998
-    - name: Languages
+    - name: Edad
+      value: 26 años
+    - name: Idiomas
       value: Español, Inglés
 
 - title: Educación
