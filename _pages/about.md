@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle:  <a href='#'>Científico de datos</a>.
+subtitle: <a href='#'>Científico de datos</a>.
 
 profile:
   align: right
@@ -20,6 +20,7 @@ profile:
 # selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
+
 Soy Adrián, Científico de Datos autodidacta.
 
 <p style='text-align: justify;'> Mi entusiasmo por los datos comenzó mientras estudiaba la licenciatura en economía donde tuve la oportunidad de tomar un curso sobre análisis de datos y machine learning. Comencé elaborando proyectos a pequeña escala como análisis descriptivos y algunas visualizaciones usando bases de datos públicas. Con el tiempo, descubrí el potencial de las APIs y me sumergí en los procesos fundamentales del análisis de datos, como la construcción de pipelines, la implementación de procesos ETL (Extract, Transform, Load) y técnicas como el web scraping.<p>
