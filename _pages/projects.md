@@ -5,8 +5,8 @@ permalink: /projects/
 description: Proyectos que he realizado.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
-horizontal: false
+display_categories: [Learn, Exploration, Tools]
+horizontal: true
 ---
 
 <!-- pages/projects.md -->
