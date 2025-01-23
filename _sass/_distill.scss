@@ -79,6 +79,9 @@ d-article {
   }
 
   d-contents {
+    position: sticky;
+    max-height: calc(100vh - 20px); /* Mantén el TOC visible dentro del viewport */
+    top: 10px; /* Espaciado desde arriba */
     align-self: start;
     grid-column: 1 / 4;
     grid-row: auto / span 4;
@@ -128,9 +131,21 @@ d-article {
     .figcaption {
       line-height: 1.4em;
     }
+// toc style
     toc-line {
       border-right: 1px solid var(--global-divider-color);
       grid-column: toc-line;
+    }
+    .toc-wrapper {
+     position: sticky;
+     top: 10px; /* Espaciado desde arriba */
+    //  max-height: calc(100vh - 20px); /* Mantén el TOC dentro del viewport */
+     overflow-y: auto; /* Scroll si excede la altura */
+     background-color: var(--global-bg-color); /* Fondo consistente */
+     z-index: 100; /* Superposición por encima de otros elementos */
+     padding: 1em; /* Espaciado interno */
+     border: 1px solid var(--global-divider-color);
+     border-radius: 8px;
     }
   }
 

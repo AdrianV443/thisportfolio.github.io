@@ -136,5 +136,40 @@
     {% include scripts/progressBar.liquid %}
     {% include scripts/back_to_top.liquid %}
     {% include scripts/search.liquid %}
+
+    <style>
+    .toc-wrapper {
+      <!--padding: 1rem;-->
+      border-radius: 8px;
+      <!--box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);-->
+    }
+
+    .floating-toc {
+      position: sticky;
+      top: 30px; /* Espaciado desde la parte superior */
+      max-height: calc(100vh - 20px); /* Mantén el TOC visible dentro del viewport */
+      overflow-y: auto; /* Scroll si el contenido excede la altura */
+    }
+
+    /* Estilo para enlaces dentro del TOC */
+    .toc-wrapper a {
+      color: #df0000;
+      text-decoration: none;
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    .toc-wrapper a:hover {
+      color: #0056a3;
+      text-decoration: underline;
+    }
+
+    /* Lista anidada para subsecciones */
+    .toc-wrapper ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+    </style>
+
   </body>
 </html>

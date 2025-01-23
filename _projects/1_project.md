@@ -11,22 +11,24 @@ toc:
   - name: Flujo de trabajo
   - name: Descarga de datos
   - name: Carga de Archivos en Python
-  - name: Fusión de tablas
+  - name: Fusión de tablas 
+    subsections:
+      - name: Función para limpiar tablas
+      - name: Visualización de la tabla final
   - name: Conclusión
-
-giscus_comments: false
+toc_float: true
+toc_depth: 3
+giscus_comments: true
 bibliography: my_bib.bib
 ---
 
 <p style="text-align: justify;">
-<b>La Encuesta Nacional de Ocupación y Empleo</b> (ENOE) elaborada por el <b>Instituto Nacional de Estadística y Geografía</b> (INEGI) es una fuente clave para comprender el mercado laboral mexicano. Proporciona datos mensuales y trimestrales con alcance nacional abarcando cada una de las 32 entidades federativas y un total de 39 ciudades. Este proyecto está inspirado en el Libro <i>¿Cómo empezar a estudiar el mercado de 
-trabajo en México? Una introducción al análisis estadístico con R aplicado a la Encuesta Nacional de Ocupación y Empleo</i> <d-cite key="escotoanaruth_book"></d-cite> y tiene fines demostrativos.
+<b>La Encuesta Nacional de Ocupación y Empleo</b><d-cite key="inegi_enoe_wp"></d-cite> (ENOE) elaborada por el <b>Instituto Nacional de Estadística y Geografía</b> (INEGI) es una fuente clave para comprender el mercado laboral mexicano. Proporciona datos mensuales y trimestrales con alcance nacional abarcando cada una de las 32 entidades federativas y un total de 39 ciudades. Este proyecto está inspirado en el Libro <i>¿Cómo empezar a estudiar el mercado de trabajo en México? Una introducción al análisis estadístico con R aplicado a la Encuesta Nacional de Ocupación y Empleo</i> <d-cite key="escotoanaruth_book"></d-cite> y tiene fines demostrativos.
 </p>
 <p style="text-align: justify;">
 El objetivo es mostrar el procesamiento de la ENOE para realizar análisis estadísticos descriptivos, asegurando la integridad de los datos para conseguir información valiosa. A continuación se detallan los pasos que van desde la extracción de la base de datos pasando por su transformación y limpieza hasta obtener una base configurada y lista para ser analizada.
 </p>
 ---
-
 ## Flujo de trabajo
 
 1. <b>Descarga de datos</b>: Obtener la base de datos de INEGI
@@ -86,6 +88,7 @@ Solo se usarán las variables con los nombres de cada tabla ya que todas las var
 no se toman en cuenta.
 </p>
 ---
+
 ## Fusión de tablas
 <p style="text-align: justify;">
 La fusión es el paso más importante porque nos ayuda a comprender como se construye la base de datos con la que podemos obtener indicadores clave, es esta parte la que muestra la multidimensionalidad sobre la que se trabaja.
@@ -102,9 +105,7 @@ El siguiente gráfico corresponde al modelo <b>entidad-relación</b> que nos pro
         {% include figure.liquid loading="eager" path="assets/img/modelo_er_enoen_2022_4t.jpg" title="modelo_entidad_relacion" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div class="caption">
-    Fuente: INEGI, <i>Encuesta Nacional de Ocupación y Empleo</i>.
-</div>
+<div class="caption">Fuente: INEGI, <i>Encuesta Nacional de Ocupación y Empleo.</i></div>
 
 Se asignan variables que contendrán los identificadores de cada tabla:
 ```python
@@ -201,7 +202,7 @@ Finalmente mostramos un fragmento de la tabla `completat422` que contiene toda l
 # Función tail() para devolver las últimas "n" filas del DataFrame
 completat422.tail()
 ```
-
+### Visualización de la tabla final
 <div class="l-body-outset" style="overflow-x: auto; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 20px;">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
