@@ -6,9 +6,9 @@
 @use "sass:color";
 
 // Colors
-$red-color: #ff0000 !default;
-$red-color-dark: #981414 !default;
-$orange-color: #f29105 !default;
+$red-color: #f82525 !default;
+$red-color-dark: #b24a0e !default;
+$orange-color: #b56600 !default;
 $blue-color: #0076df !default;
 $blue-color-dark: #00205f !default;
 $cyan-color: #2698ba !default;
@@ -23,12 +23,18 @@ $light-purple-color: color.adjust($purple-color, $lightness: 25%);
 $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
 $yellow-color: #efcc00 !default;
-$sepia: #e8e8e8;
-
-$grey-color: #ebe9e9 !default;
+$sepia: #f2f4e5;
+// code text
+$code-text-color-light: #2a2a2a !default;
+$code-text-color-dark: #ffffff !default;
+// border 
+$code-border-color-light: #ba3333 !default;
+$code-border-color-dark: #ba3333 !default;
+//
+$grey-color: #bcbcbc22 !default;
 $grey-color-light: color.adjust($grey-color, $lightness: 40%);
-$grey-color-dark: #1c1c1d;
-$grey-900: #212529;
+$grey-color-dark: #29292c;
+$grey-900: #9494948c;
 
 $white-color: rgb(255, 255, 255) !default;
 $black-color: #000000 !default;
@@ -36,7 +42,7 @@ $black-color: #000000 !default;
 // Theme colors
 
 $code-bg-color-light: rgba($purple-color, 0.05);
-$code-bg-color-dark: #cbcdce00 !default;
+$code-bg-color-dark: #33333324; // !default;
 
 // Font awesome location
 $fa-font-path: "../webfonts";

@@ -1,18 +1,26 @@
 ---
-layout: page
+layout: distill
 title: Trabajando con la ENOE y Python
 description: Descarga y configura los datos de la Encuesta Nacional de Ocupación y Empleo para realizar análisis estadísticos
-# img: assets/img/enoe1_p.png
 importance: 1
 category: Learn
 related_publications: true
+date: 2025-01-20
+featured: true
 toc:
-    sidebar: left
+  - name: Flujo de trabajo
+  - name: Descarga de datos
+  - name: Carga de Archivos en Python
+  - name: Fusión de tablas
+  - name: Conclusión
+
 giscus_comments: false
+bibliography: my_bib.bib
 ---
+
 <p style="text-align: justify;">
 <b>La Encuesta Nacional de Ocupación y Empleo</b> (ENOE) elaborada por el <b>Instituto Nacional de Estadística y Geografía</b> (INEGI) es una fuente clave para comprender el mercado laboral mexicano. Proporciona datos mensuales y trimestrales con alcance nacional abarcando cada una de las 32 entidades federativas y un total de 39 ciudades. Este proyecto está inspirado en el Libro <i>¿Cómo empezar a estudiar el mercado de 
-trabajo en México? Una introducción al análisis estadístico con R aplicado a la Encuesta Nacional de Ocupación y Empleo</i> <b>{% cite escotoanaruth_book %}</b> y tiene fines demostrativos.
+trabajo en México? Una introducción al análisis estadístico con R aplicado a la Encuesta Nacional de Ocupación y Empleo</i> <d-cite key="escotoanaruth_book"></d-cite> y tiene fines demostrativos.
 </p>
 <p style="text-align: justify;">
 El objetivo es mostrar el procesamiento de la ENOE para realizar análisis estadísticos descriptivos, asegurando la integridad de los datos para conseguir información valiosa. A continuación se detallan los pasos que van desde la extracción de la base de datos pasando por su transformación y limpieza hasta obtener una base configurada y lista para ser analizada.
@@ -44,13 +52,16 @@ Tras descargar y descomprimir los archivos se muestran cinco tablas:
 
 ## Carga de archivos en Python
 A continuación en un Jupyter Notebook instalaremos pyreadstat con la siguiente línea de código:
+
 ```python
-# Librería que permite manejar archivos STATA en python
+# Librería que permite manejar archivos STATA en python 
 !pip install pyreadstat
 ```
+
 Es importante que el Notebook se encuentre dentro de la misma carpeta que las tablas con la finalidad de evitar conflictos con las rutas de los archivos.
 
 Una vez instalada la importamos a nuestro entorno:
+
 ```python
 import pyreadstat
 ```
@@ -75,7 +86,6 @@ Solo se usarán las variables con los nombres de cada tabla ya que todas las var
 no se toman en cuenta.
 </p>
 ---
-
 ## Fusión de tablas
 <p style="text-align: justify;">
 La fusión es el paso más importante porque nos ayuda a comprender como se construye la base de datos con la que podemos obtener indicadores clave, es esta parte la que muestra la multidimensionalidad sobre la que se trabaja.
@@ -93,7 +103,7 @@ El siguiente gráfico corresponde al modelo <b>entidad-relación</b> que nos pro
     </div>
 </div>
 <div class="caption">
-    Fuente INEGI.
+    Fuente: INEGI, <i>Encuesta Nacional de Ocupación y Empleo</i>.
 </div>
 
 Se asignan variables que contendrán los identificadores de cada tabla:
@@ -104,7 +114,7 @@ idhogar = ['cd_a', 'ent', 'con', 'v_sel', 'n_hog', 'h_mud']
 idpersona = ['cd_a', 'ent', 'con', 'v_sel', 'n_hog', 'h_mud', 'n_ren']
 ```
 
-Los siguientes pasos requieren que usemos la librería pandas.
+Importamos la librería pandas.
 ```python
 import pandas as pd
 ```
@@ -123,48 +133,51 @@ tabla = pd.crosstab(coet422['n_ent_x'], coet422['n_ent_y'])
 print(tabla)
 ```
 ``Output:``
-```
-n_ent_y             Cuarta entrevista  Primera entrevista  Quinta entrevista  \
-n_ent_x                                                                        
-Cuarta entrevista               64109                   0                  0   
-Primera entrevista                  0               65103                  0   
-Quinta entrevista                   0                   0              63929   
-Segunda entrevista                  0                   0                  0   
-Tercera entrevista                  0                   0                  0   
+<pre>
+  <code class="plaintext">
+  n_ent_y             Cuarta entrevista  Primera entrevista  Quinta entrevista  \
+  n_ent_x                                                                        
+  Cuarta entrevista               64109                   0                  0   
+  Primera entrevista                  0               65103                  0   
+  Quinta entrevista                   0                   0              63929   
+  Segunda entrevista                  0                   0                  0   
+  Tercera entrevista                  0                   0                  0   
 
-n_ent_y             Segunda entrevista  Tercera entrevista  
-n_ent_x                                                     
-Cuarta entrevista                    0                   0  
-Primera entrevista                   0                   0  
-Quinta entrevista                    0                   0  
-Segunda entrevista               64334                   0  
-Tercera entrevista                   0               65395  
-```
+  n_ent_y             Segunda entrevista  Tercera entrevista  
+  n_ent_x                                                     
+  Cuarta entrevista                    0                   0  
+  Primera entrevista                   0                   0  
+  Quinta entrevista                    0                   0  
+  Segunda entrevista               64334                   0  
+  Tercera entrevista                   0               65395  
+  </code>
+</pre>
+
 <p style="text-align: justify;">
-
 El resultado de la tabla cruzada muestra el número de veces en el que las categorías de una serie coinciden con las de la otra. Este paso es útil para observar como se manejaron los datos una vez fusionados.
 <br>
 Particularmente para este proyecto se considera una función para manejar la limpieza de las tablas eliminando aquellas columnas redundantes generadas a partir del paso anterior, sin embargo es totalmente opcional
 </p>
 
+### Función para limpiar tablas
 ```python
-# Función para limpiar tablas
 def limpiar_tabla(tabla):
     columnas_eliminar = [col for col in tabla.columns if col.endswith('_y')]
     tabla = tabla.drop(columns = columnas_eliminar)
     tabla = tabla.rename(columns={col:col .split('_')[0] for col in tabla.columns if col.endswith('_x')})
     return tabla
 ```
-
 Y se ejecuta sobre la primera tabla creada.
 ```python
 coet422 = limpuar_tabla(coet422)
 print(coet422.shape)
 ```
 `Output:`
-```
+<pre>
+  <code class="python">
 (322870, 235)
-```
+  </code>
+</pre>
 
 Se repite el proceso uniendo todas las tablas.
 ```python
@@ -188,24 +201,39 @@ Finalmente mostramos un fragmento de la tabla `completat422` que contiene toda l
 # Función tail() para devolver las últimas "n" filas del DataFrame
 completat422.tail()
 ```
-<!-- <div> -->
-<div class="fake-img l-page-outset">
+
+<div class="l-body-outset" style="overflow-x: auto; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 20px;">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
     .dataframe thead th {
-        text-align: right;
+        text-align: center;
+        border-bottom: 2px solid #ddd;
+    }
+    .dataframe {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+    .dataframe td, .dataframe th {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    .dataframe tbody tr:nth-child(even) {
+        background-color: #704d4d;
+    }
+    .dataframe tbody tr:hover {
+        background-color: #704d4d;
     }
 </style>
 <table border="1" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr style="text-align: center;">
       <th></th>
       <th>r</th>
       <th>loc</th>
@@ -355,17 +383,15 @@ completat422.tail()
 </table>
 <p>5 rows × 349 columns</p>
 </div>
----
 
+---
 
 ## Conclusión
 <p style="text-align: justify;">
-
 El método presentado aquí pretende ser una herramienta más para el acercamiento al estudio de las ciencias sociales a partir de los datos de la Encuesta Nacional de Ocupación y Empleo (ENOE). Es posible ampliar este análisis aplicando métodos estadísticos o visualizaciones con bibliotecas como <code>matplotlib</code> o <code>seaborn</code>. 
 </p>
 
 <p style="text-align: justify;">
-
 Se espera acercar al lector al estudio de Python como herramienta para construir estructuras de datos, también para quien ya tiene conocimiento sobre el lenguaje de programación y les sea de interés analizar el mercado nacional de trabajo. Si bien no se dan descripciones básicas técnicas se espera promover su uso y aplicación.
 </p>
 

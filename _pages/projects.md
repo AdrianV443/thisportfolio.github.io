@@ -2,7 +2,7 @@
 layout: page
 title: Proyectos
 permalink: /projects/
-description: Proyectos que he realizado.
+# description: Proyectos que he realizado.
 nav: true
 nav_order: 3
 display_categories: [Learn, Exploration, Tools]

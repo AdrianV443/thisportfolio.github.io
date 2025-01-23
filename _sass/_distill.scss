@@ -55,10 +55,14 @@ d-article {
   // Style taken from code blocks
   details {
     color: var(--global-text-color);
-    background-color: var(--global-code-bg-color);
+    background: none;
+    box-shadow: 0 2px 4px rgb(115, 5, 5);
+    transition: background-color 0.3s, color 0.3s;
+    // background-color: var(--global-code-bg-color);
     margin-top: 0;
     padding: 8px 12px;
     position: relative;
+    // border: 2px solid var(--global-theme-color);
     border-radius: 6px;
     display: block;
     margin-bottom: 20px;
@@ -169,3 +173,14 @@ d-appendix {
     }
   }
 }
+
+// code, pre {
+//   background-color: var(--global-code-bg-color);
+//   color: var(--global-code-text-color);
+//   border-radius: 1px;
+//   padding: 1rem;
+//   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+//   font-size: 0.85em;
+//   box-shadow: 0 2px 4px rgba(179, 179, 179, 0.1);
+//   transition: background-color 0.3s, color 0.3s;
+// }
