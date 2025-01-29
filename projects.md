@@ -1,5 +1,5 @@
 <!-- ---
-layout: distill
+layout: page
 title: Trabajando con la ENOE y Python
 description: Descarga y configura los datos de la Encuesta Nacional de Ocupación y Empleo para realizar análisis estadísticos
 importance: 1
@@ -7,23 +7,6 @@ category: Learn
 related_publications: true
 date: 2025-01-20
 featured: true
-toc:
-  - name: Flujo de trabajo
-  - name: Entendiendo las tablas y sus relaciones
-    subsections:
-      - name: Factor de expansión
-      - name: Diseño de un modelo multidimensional
-  - name: Descarga de datos
-  - name: Carga de Archivos en Python
-  - name: Fusión de tablas 
-    subsections:
-      - name: Modelo entidad-relación
-      - name: Asignación de identificadores
-      - name: Unión de tablas
-  - name: Guardado de la base de datos
-  - name: Conclusión
-toc_float: true
-toc_depth: 3
 giscus_comments: true
 bibliography: my_bib.bib
 ---
