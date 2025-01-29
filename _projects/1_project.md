@@ -544,9 +544,6 @@ Una vez finalizada la fusión y limpieza de las tablas, es importante guardar la
 ```python
 completat422.to_csv('completat422.csv', index=false)
 ```
-
-
----
 ## Conclusión
 <p style="text-align: justify;">
 El método presentado en este artículo proporciona una herramienta para el estudio del mercado laboral mexicano utilizando la Encuesta Nacional de Ocupación y Empleo (ENOE). A través de Python, es posible construir una base de datos multidimensional que permita realizar análisis estadísticos y visualizaciones avanzadas. Este enfoque no solo facilita el manejo de grandes volúmenes de datos, sino que también promueve el uso de herramientas de programación en el análisis de ciencias sociales.
