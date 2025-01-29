@@ -264,9 +264,9 @@ El siguiente gráfico corresponde al modelo <b>entidad-relación</b> que nos pro
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/modelo_er_enoen_2022_4t.jpg" title="modelo_entidad_relacion" class="img-fluid rounded z-depth-1" %}
-    <div class="caption">Fuente: INEGI, <i>Encuesta Nacional de Ocupación y Empleo.</i></div>
     </div>
 </div>
+<div class="caption">Fuente: INEGI, <i>Encuesta Nacional de Ocupación y Empleo.</i></div>
 
 
 Los siguientes pasos nos permiten unir las tablas:
