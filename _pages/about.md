@@ -11,11 +11,12 @@ profile:
   more_info: >
     <p>(+52) 7751425295</p><br>
     <p>México</p><br>
-    <p>Tlalpan, CDMX</p><br>
+    <p></p><br>
     <p></p><br>
     <p></p><br>
     <p></p><br>
 
+  # <p>Tlalpan, CDMX</p><br>
 # news: true # includes a list of news items
 # selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
